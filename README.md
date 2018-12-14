@@ -5,11 +5,12 @@ Journey is an app that is used for travelers to find other travelers, whether in
 I personally travel a lot, and sometimes its hard to find other travelers to go explore a new country or city with. I have also meet travelers that are introverts that find it hard to talk to people when they are traveling. This app is to create a community that will introduce all kinds of people and to be able to share the joys of traveling together.
 
 ## Screenshots
-
-<img src="https://drive.google.com/uc?id=1ExbxPsmHVdxDdbc91tKo-LBdGoDHfd_Y"
-     alt="Journey Login Screen"
-     style="width: 50vw;"
-/>
+<p align="center">
+     <img src="https://drive.google.com/uc?id=1ExbxPsmHVdxDdbc91tKo-LBdGoDHfd_Y"
+          alt="Journey Login Screen"
+          width="33.33%" margin="0 auto"
+     />
+</p>
 
 ## Tech/framework used
 Journey was built using the MERN stack
