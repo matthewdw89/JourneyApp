@@ -6,7 +6,10 @@ I personally travel a lot, and sometimes its hard to find other travelers to go 
 
 ## Screenshots
 
-![Journey Login Screen](https://drive.google.com/open?id=1ExbxPsmHVdxDdbc91tKo-LBdGoDHfd_Y)
+<img src="https://drive.google.com/uc?id=1ExbxPsmHVdxDdbc91tKo-LBdGoDHfd_Y"
+     alt="Journey Login Screen"
+     style="width: 50vw;"
+/>
 
 ## Tech/framework used
 Journey was built using the MERN stack
