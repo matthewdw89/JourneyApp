@@ -8,7 +8,7 @@ I personally travel a lot, and sometimes its hard to find other travelers to go 
 <p align="center">
      <img src="https://drive.google.com/uc?id=1ExbxPsmHVdxDdbc91tKo-LBdGoDHfd_Y"
           alt="Journey Login Screen"
-          width="33.33%" margin="0 auto"
+          width="33.33%"
      />
 </p>
 
