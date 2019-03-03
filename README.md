@@ -22,6 +22,3 @@ Journey was built using the MERN stack
 **R**eact - 
 
 **N**ode.js.
-
-
-Currently working on minor fixes before uploading to GitHub
