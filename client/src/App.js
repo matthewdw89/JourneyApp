@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Route, Switch, withRouter, Redirect} from 'react-router-dom'
-// import {NavBar, PrimaryProfile, UsersList, Profile, Chat, BottomMenu, Settings, Login, Signup} from './components'
 import PrimaryProfile from './components/PrimaryProfile';
 import UsersList from './components/UsersList';
 import Profile from './components/Profile';
