@@ -11,10 +11,6 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import BottomMenu from './components/BottomMenu';
 
-
-// GOOGLE API
-const API_KEY = "AIzaSyBiCJtmPChgFcIpFw7jxASNwDnSbwScIic"
-
 class App extends Component {
   state = {
     primaryUser: null,
