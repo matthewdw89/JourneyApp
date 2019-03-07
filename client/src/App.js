@@ -101,7 +101,6 @@ class App extends Component {
   }
 
   handleSaveSettings = (e) => {
-    console.log(this.props)
     if(e){e.preventDefault();}
     if(this.props.location.pathname !== "/profile/edit"){
       this.toggleShowNext();
