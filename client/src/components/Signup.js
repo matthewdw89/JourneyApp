@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 
 
 export default class Signup extends Component {
-    state = {
-
-    }
 
     submitSignup = (e) => {
         e.preventDefault();
