@@ -12,6 +12,19 @@ I personally travel a lot, and sometimes its hard to find other travelers to go 
      />
 </p>
 
+## Setup
+To run this project locally there are a few packages you will need to npm install:
+
+git clone repo into a directory
+
+```
+$ cd ./JourneyApp
+$ npm install
+$ cd ./client
+$ npm install
+
+```
+
 ## Tech/framework used
 Journey was built using the MERN stack
 
