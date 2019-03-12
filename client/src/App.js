@@ -53,7 +53,7 @@ class App extends Component {
       .then(data => this.setState({ primaryUser: data }))
       .catch(err => console.log(err))
   }
-
+          // COMMENTED PUT TO NOT CAUSE ERRORS UNTIL AN GOOGLE API KEY IS SUPPLIED
   // fetchGeoLoc = () => {
   //   let lng = this.state.primaryUser.location.coordinates[0]
   //   let lat = this.state.primaryUser.location.coordinates[1]
@@ -79,9 +79,6 @@ class App extends Component {
     let newUpdate; 
     if(e){ newUpdate = { ...this.state.primaryUser, [e.target.name]: e.target.value }}
     if(selected){ newUpdate = {...this.state.primaryUser, next_destination: selected}}
-    // console.log(this.state.primaryUser)
-    // console.log(e)
-    // console.log(selected)
     this.setState({
       primaryUser: newUpdate
     })
@@ -131,6 +128,7 @@ class App extends Component {
 
   componentDidUpdate(){
     if(!this.state.currentLoc && !!this.state.primaryUser){
+          // COMMENTED PUT TO NOT CAUSE ERRORS UNTIL AN GOOGLE API KEY IS SUPPLIED
       // this.fetchGeoLoc();
     }
   }
