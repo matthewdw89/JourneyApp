@@ -13,7 +13,7 @@ const express = require('express'),
 let server = null 
 
 const PORT = process.env.PORT || 8080;
-
+const SECRET_KEY = "iAmAsecretKey"
 
 // --- Connect DB and run server ---
 mongoose.connect('mongodb://localhost:27017/Journey', { useNewUrlParser: true });
@@ -42,7 +42,7 @@ authorize = (req, res, next) => {
     }
     // if there is a token, try to verify it
                     // Will require a secret key to work
-    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+    jwt.verify(token, SECRET_KEY, (err, decoded) => {
         // if it is NOT authentic, reject with 401
         if (!decoded) {
             return res.json({ "msg": "invalid token" })
@@ -121,7 +121,7 @@ app.post('/login', (req, res) => {
         .then( user => {
             bcrypt.compare(password, user.password, (err, result) => {
             if (result) {                                                       // Will require a secret key to work
-                    const token = jwt.sign({ subject: user.email, db: user._id }, process.env.SECRET_KEY, {expiresIn: '10h'});
+                    const token = jwt.sign({ subject: user.email, db: user._id }, SECRET_KEY, {expiresIn: '10h'});
                     res.json({ token: token })
                 } else {
                     res.status(401).json({ 'msg': "Invalid email or password" })

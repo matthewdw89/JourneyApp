@@ -54,18 +54,18 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-  fetchGeoLoc = () => {
-    let lng = this.state.primaryUser.location.coordinates[0]
-    let lat = this.state.primaryUser.location.coordinates[1]
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&result_type=locality&key=${API_KEY}`)
-      .then((res) => res.json(res))
-      .then((data) => {
-        this.setState({
-          currentLoc: data.results[0].formatted_address
-        })
-      })
-      .catch(err => console.log(err));
-  }
+  // fetchGeoLoc = () => {
+  //   let lng = this.state.primaryUser.location.coordinates[0]
+  //   let lat = this.state.primaryUser.location.coordinates[1]
+  //   fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&result_type=locality&key=${API_KEY}`)
+  //     .then((res) => res.json(res))
+  //     .then((data) => {
+  //       this.setState({
+  //         currentLoc: data.results[0].formatted_address
+  //       })
+  //     })
+  //     .catch(err => console.log(err));
+  // }
 
   handleUpdatingLocation = (newLoc) => {
     let {lng, lat} = newLoc
@@ -131,12 +131,11 @@ class App extends Component {
 
   componentDidUpdate(){
     if(!this.state.currentLoc && !!this.state.primaryUser){
-      this.fetchGeoLoc();
+      // this.fetchGeoLoc();
     }
   }
 
   render() {
-    console.log(process.env)
     return (
         <div className="App">
           <main>

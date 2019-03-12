@@ -8,8 +8,6 @@ export default class Login extends Component {
         error: null
     }
 
-    
-
     login = (e) => {
         e.preventDefault();
         const {email, password} = e.target;
@@ -25,12 +23,19 @@ export default class Login extends Component {
             .then(data => {
                 if(data.msg){
                     this.setState({error: data.msg})
+                    setTimeout( () => {
+                        this.setState({error: null})
+                    }, 3000)
                 } else {
                     localStorage.setItem("token", JSON.stringify(data.token))
                     return this.props.history.push("/users")
                 }
             })
             .catch(err => console.log(err));
+    }
+
+    componentWillUnmount(){
+        clearTimeout();
     }
 
   render() {
