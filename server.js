@@ -60,21 +60,27 @@ handleSocket = () => {
     const io = socketio(server)
     
     io.on('connection', (socket) => {
+        // Show who has connected to the socket instance
         console.log(`new connection: ${socket.id}`)
 
         socket.on('join', (id, err) => {
+            // When someone sends a join request take the id and join it to sockets to make a private room
             socket.join(id)
+            // Next go to the Message database and find any messages with the same id
             Message.find({ chatroomId: id })
                 .then(messages => {
+                    // Send all messages found back to client
                     io.to(id).emit('messages', messages)
                 })
                 .catch(err => console.log(err))
         })
 
         socket.on("newMessage", (data) => {
+            // If a new message is sent, get the id and split it in two.
             let middle = data.chatroomId.length / 2
             var id1 = data.chatroomId.slice(0, middle);
             var id2 = data.chatroomId.slice(middle);
+            // Check to see if the id of the sender is id1 or id2, then save the on it doesnt equal to the data object
             id1 === data.sender.id ? data.receiver = id2 : data.receiver = id1
             // save to msg to db
             newMessage = new Message(data)
@@ -90,6 +96,7 @@ handleSocket = () => {
 
         socket.on('disconnect', (id) => {
             console.log("leaving")
+            // Leave the chat room by id
             socket.leave(id)
         })
 
